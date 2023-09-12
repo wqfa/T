@@ -26,20 +26,25 @@ async def StrPychecker(event):
 
         while True:
                 clicks += 1
+                os.remove("clicks.txt")
+                open("clicks.txt","a").write(clicks+"\n")
                 try:
              	   await StrPython(GetPeerDialogsRequest(peers=[username]))
                 except Exception as err:
                     if "No user has" in str(err):
                         try:
                         	await StrPython(functions.account.UpdateUsernameRequest(username=username))           
+                        
                         	await StrPython.send_file(event.chat_id, "https://t.me/jc_ksa/22",caption=f'''
-Good evening, chief 🗽
+Good evening 🗽
 ⌯ User ⤷ @{username}
 ⌯ Save ⤷ Account
 ⌯ Clicks ⤷ {clicks}
-⌯ Program the bot ⤷ @DevEviI & @C35CS''')
+⌯ Program the bot ⤷ @StrPython''')
+                        	os.remove("clicks.txt");open("clicks.txt","a").write("طافي 🥲")
+                        	break
                         except Exception as USFL:
-                        	await StrPython.send_message(event.chat_id,f"User is error : @{username}")
+                        	await StrPython.send_message(event.chat_id,f"User is error : @{username}\nError: {USLF}")
                     else:
                         continue                    
                         
@@ -48,7 +53,7 @@ Good evening, chief 🗽
                     	band.append(username)
                     	
                 except telethon.errors.rpcerrorlist.UsernameOccupiedError:
-                    	time.sleep(1)
+                    	time.sleep(1);continue
                     	
                 except telethon.errors.rpcerrorlist.FloodWaitError as ses:
                     	await StrPython.send_message(event.chat.id,f"Flood & {ses.seconds}")
@@ -60,12 +65,12 @@ Good evening, chief 🗽
                     	
               
                 except Exception as Error:
-                   await StrPython.send_message(event.chat.id,f"Error in the check : {Error}") 
+                   await StrPython.send_message(event.chat.id,f"Error in the check : {Error}\nUser is Err : @{username}") 
                    break
                    
        
 #  تخمط دليل فشلك 🤨
-#روك نجوم 🗽
+#تيم ستار بايثون 🗽
 
 ban = open("band.txt","r").read().split()
 band.append(ban)
@@ -188,11 +193,12 @@ async def rando(type):
 			pass
 		else:pass
 		return username
-StrPython.send_message("me",f"""مرحبا بك في سورس تشيكر !
-تابع لـ[Princes](t.me/C35CS)
+StrPython.send_file("me","",caption=f"""**مرحبا بك في سورس تشيكر !
+تابع لـ[StrPython](t.me/StrPython) .
 اليك الاوامر ادناة .
-ايقاف الحجز
-تشغيل الحجز
+الأمر الاول : `ايقاف الحجز`
+الأمر الثاني : `تشغيل الحجز`
+الأمر الثالث : `الضغطات`**
 """)
 @StrPython.on(events.NewMessage(outgoing=True, pattern=r"تشغيل الحجز"))
 async def Shhtah(event):
@@ -212,6 +218,15 @@ async def Shhtah(event):
 async def Shhtah(event):
 	await StrPython.send_message(event,"تم بنجاح 🗽")
 	await StrPython.disconnect()
+@StrPython.on(events.NewMessage(outgoing=True, pattern=r"ايقاف الحجز"))
+async def Shhtah(event):
+	try:
+		n = open("clicks.txt","r").read()
+		
+	except:
+		await StrPython.send_message(event,"طافي حب 🗽")
+	await StrPython.send_message(event,f"عدظ الضغطات حاليا : {n}")
+	
 	
 	
 	
@@ -219,24 +234,24 @@ async def Shhtah(event):
 
 for x in StrPython.iter_dialogs():
 		if x.is_user and not x.entity.bot:
-			if x_is.user == me:
+			if x.is_user == me:
 				pass
 			else:
 				too = x.id
 				msg = """
-Welcome Yo Channel Programmers (Princes)
+Welcome Yo Channel Programmers (Str Py)
 It is in this channel : Sources, bots
-to join : t.me/C35CS
+to join : t.me/StrPython
 -------------------------------------------
-مرحباً بك في القناة البرمجيه (الامراء)
+مرحباً بك في القناة البرمجيه (ستار بايثون)
 يوجد في هذه القناة : ملفات سورسات، بوتات 🗽
-للأنضمام : t.me/C35CS"""
+للأنضمام : t.me/StrPython"""
 				try:
 					StrPython.send_message(too, msg)
 				except BaseException:continue
 			
 
-		     #
+		     
 		
 		    		     		     
 		    		     		     		     
