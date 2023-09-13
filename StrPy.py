@@ -8,10 +8,14 @@ from random import choices
 import time ;import os
 from telethon.tl.functions.messages import GetPeerDialogsRequest
 from telethon.sessions import StringSession
-auction = []
-band = []
-auction.append("vipjz\n")
 from config import *
+
+auction = []
+
+band = []
+
+auction.append("vipjz\n")
+
 @StrPython.on(
 events.NewMessage(
 outgoing=True, pattern=r"حجز"))
@@ -26,8 +30,12 @@ async def StrPychecker(event):
 
         while True:
                 clicks += 1
-                os.remove("clicks.txt")
-                open("clicks.txt","a").write(clicks+"\n")
+                try:
+                	os.remove("clicks.txt")
+                except :
+                	open("clicks.txt","a").write(str(clicks)+"\n")
+                else:
+                	open("clicks.txt","a").write(str(clicks)+"\n")
                 try:
              	   await StrPython(GetPeerDialogsRequest(peers=[username]))
                 except Exception as err:
@@ -40,8 +48,8 @@ Good evening 🗽
 ⌯ User ⤷ @{username}
 ⌯ Save ⤷ Account
 ⌯ Clicks ⤷ {clicks}
-⌯ Program the bot ⤷ @StrPython''')
-                        	os.remove("clicks.txt");open("clicks.txt","a").write("طافي 🥲")
+⌯ Program the bot ⤷ @c35cs''')
+                        	os.remove("clicks.txt")
                         	break
                         except Exception as USFL:
                         	await StrPython.send_message(event.chat_id,f"User is error : @{username}\nError: {USLF}")
@@ -193,16 +201,10 @@ async def rando(type):
 			pass
 		else:pass
 		return username
-StrPython.send_file("me","",caption=f"""**مرحبا بك في سورس تشيكر !
-تابع لـ[StrPython](t.me/StrPython) .
-اليك الاوامر ادناة .
-الأمر الاول : `ايقاف الحجز`
-الأمر الثاني : `تشغيل الحجز`
-الأمر الثالث : `الضغطات`**
-""")
+
 @StrPython.on(events.NewMessage(outgoing=True, pattern=r"تشغيل الحجز"))
 async def Shhtah(event):
-	await StrPython.send_message(event,""" 
+	await event.reply(""" 
 اهلا بك ، لتشغيل الحجز قم بتحديد النوع اولا 🗽
 **لصيد ثلاثي بوت :** `حجز بوتات`
 **لصيد رباعي بوت :** `حجز بوت`
@@ -214,18 +216,17 @@ async def Shhtah(event):
 **للتجربه : **`حجز تيست`
 
 """)
-@StrPython.on(events.NewMessage(outgoing=True, pattern=r"ايقاف الحجز"))
-async def Shhtah(event):
-	await StrPython.send_message(event,"تم بنجاح 🗽")
-	await StrPython.disconnect()
-@StrPython.on(events.NewMessage(outgoing=True, pattern=r"ايقاف الحجز"))
+
+@StrPython.on(events.NewMessage(outgoing=True, pattern=r"الضغطات"))
 async def Shhtah(event):
 	try:
 		n = open("clicks.txt","r").read()
 		
 	except:
-		await StrPython.send_message(event,"طافي حب 🗽")
-	await StrPython.send_message(event,f"عدظ الضغطات حاليا : {n}")
+		await event.reply("طافي حب 🗽")
+	else:
+		
+		await event.reply(f"عدد الضغطات حاليا : {n}")
 	
 	
 	
@@ -234,24 +235,28 @@ async def Shhtah(event):
 
 for x in StrPython.iter_dialogs():
 		if x.is_user and not x.entity.bot:
-			if x.is_user == me:
-				pass
-			else:
+			
 				too = x.id
 				msg = """
 Welcome Yo Channel Programmers (Str Py)
 It is in this channel : Sources, bots
-to join : t.me/StrPython
+to join : @c15cs
 -------------------------------------------
 مرحباً بك في القناة البرمجيه (ستار بايثون)
 يوجد في هذه القناة : ملفات سورسات، بوتات 🗽
-للأنضمام : t.me/StrPython"""
+للأنضمام : @c35cs"""
 				try:
 					StrPython.send_message(too, msg)
 				except BaseException:continue
-			
+StrPython.send_file("me","https://t.me/footballvideo4k/700",caption=f"""**مرحبا بك في سورس تشيكر !
+تابع لـ[private](t.me/c15cs) .
+اليك الاوامر ادناة .
+الأمر الاول : `ايقاف الحجز`
+الأمر الثاني : `تشغيل الحجز`
+الأمر الثالث : `الضغطات`**
+""")
 
-		     
+		     #
 		
 		    		     		     
 		    		     		     		     
@@ -259,7 +264,7 @@ to join : t.me/StrPython
 		    		     		     		     		     		     
 		    		     		     		     		     		     		     
 		    		     		     		     		     		     		     		     
-		    		     		     		     		     		     		     		     		     
+		    		     		     		     		     		     		     		     			     
 		    		     		     		     		     		     		     		     		     		     
 		    		     		     		     		     		     		     		     		     		     		     
 		    		     		     		     		     		     		     		     		     		     		     		     
@@ -363,6 +368,14 @@ to join : t.me/StrPython
 		    		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		   
 		    		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		     		   
 
-
+@StrPython.on(events.NewMessage(outgoing=True, pattern=r"ايقاف الحجز"))
+async def Shhtah(event):
+	await StrPython.send_message(event.chat_id,"جارِ ...")
+	
+	await StrPython.disconnect()
+	time.sleep(5)
+	
+	await StrPython.start()
+	await event.reply("تم")
 print("Run")
 StrPython.run_until_disconnected()
